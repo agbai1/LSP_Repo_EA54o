@@ -19,24 +19,27 @@ public class ETL {
         List<Product> products = extractData(inputData);
         if (products == null) return;
         
+        // Transforming data - Modify data based on requirements
         List<Product> transformedProducts = transformData(products);
+        
+        // Loading - Save transformed data to a new file
         writeData(outputData, transformedProducts);
         System.out.println("Data transformed and output saved to: " + outputData);
     }
-	
-    private String inputData;
-    private String outputData;
     
-    public ETL(String inputData, String outputData) {
-        this.inputData = inputData;
-        this.outputData = outputData;
-    }
-    
+	/**
+     * Method that reads a csv file and returns a list of string arrays.
+     */
     public static List<Product> extractData(String inputData) {
-        List<Product> products = new ArrayList<>();
-        try (BufferedReader buffreadr = new BufferedReader(new FileReader(inputData))) {
+    	// Create an empty array called data to hold csv rows
+    	List<Product> products = new ArrayList<>();
+        
+    	// read each row in the csv file
+    	try (BufferedReader buffreadr = new BufferedReader(new FileReader(inputData))) {
             String row;
             boolean isFirstRow = true;
+            
+            // iterate while row is not empty
             while ((row = buffreadr.readLine()) != null) {
                 if (isFirstRow) {
                     isFirstRow = false;
@@ -50,6 +53,7 @@ public class ETL {
                 double price = Double.parseDouble(data[2].trim());
                 String category = data[3].trim();
                 
+                // concatenate csv rows to data array
                 products.add(new Product(productId, name, price, category));
             }
         } catch (FileNotFoundException e) {
@@ -61,24 +65,33 @@ public class ETL {
         }
         return products;
     }
-
+    
+    /**
+     * Transforms csv data by applying assignment requirements
+     */
     public static List<Product> transformData(List<Product> products) {
         List<Product> transformedProducts = new ArrayList<>();
         for (Product product : products) {
             double newPrice = product.getPrice();
             String newCategory = product.getCategory();
-
+            
+            // Apply a 10% discount to Electronics
             if (newCategory.equalsIgnoreCase("Electronics")) {
                 newPrice = Math.round((newPrice * 0.9) * 100.0) / 100.0;
             }
+            // Change category to if price > 500
             if (newPrice > 500) {
                 newCategory = "Premium Electronics";
             }
+            // Add transformed row
             transformedProducts.add(new Product(product.getProductId(), product.getName(), newPrice, newCategory));
         }
         return transformedProducts;
     }
 
+    /**
+     * Determines the price range category.
+     */
     public static void writeData(String outputData, List<Product> products) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(outputData))) {
             bw.write("ProductID,Name,Price,Category,PriceRange\n");
@@ -95,7 +108,8 @@ public class ETL {
         private String name;
         private double price;
         private String category;
-
+        
+        // Constructor
         public Product(int productId, String name, double price, String category) {
             this.productId = productId;
             this.name = name.toUpperCase();
