@@ -2,7 +2,7 @@ package org.howard.edu.lsp.assignment4;
 
 import java.util.List;
 
-//Specialized class for radar display updates
+//Class for radar display updates
 public class RadarMonitor extends ControlDisplay {
  @Override
  public void refresh(List<Plane> flightList) {

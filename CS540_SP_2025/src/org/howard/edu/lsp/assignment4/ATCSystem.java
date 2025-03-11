@@ -1,6 +1,7 @@
 package org.howard.edu.lsp.assignment4;
 
 
+// CITAION
 public class ATCSystem {
     public static void main(String[] args) {
         TrafficControlCenter controlCenter = new TrafficControlCenter();
@@ -18,3 +19,7 @@ public class ATCSystem {
 
     }
 }
+
+
+// CITATION
+// Logic to implement gathered from https://github.com/saifilmaknojia/Air-Traffic-Control-System-Simulation.git

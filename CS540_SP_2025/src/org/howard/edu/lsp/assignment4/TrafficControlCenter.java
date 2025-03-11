@@ -1,6 +1,6 @@
 package org.howard.edu.lsp.assignment4;
 
-//Orchestrates air traffic data collection and monitoring
+//Air traffic data collection and monitoring class
 public class TrafficControlCenter {
  private final FlightDatabase flightDatabase = new FlightDatabase();
  private final ControlDisplay radar = new RadarMonitor();
