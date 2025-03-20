@@ -1,7 +1,7 @@
 package org.howard.edu.lsp.midterm.question2;
 
 /**
- * Represents a book in a library with title, author, ISBN, and publication year.
+ * Represents a book in a library with title, author, ISBN, and publication year
  */
 public class Book {
     private String title;
@@ -10,7 +10,7 @@ public class Book {
     private int yearPublished;
 
     /**
-     * Constructor for creating a Book object.
+     * Constructor for creating a Book object
      * 
      * @param title         The title of the book
      * @param author        The author of the book
@@ -59,10 +59,10 @@ public class Book {
     }
 
     /**
-     * Checks if two Book objects are equal based on ISBN and author.
+     * Checks if two Book objects are equal based on ISBN and author
      * 
      * @param obj The object to compare
-     * @return True if the books have the same ISBN and author, otherwise false.
+     * @return True if the books have the same ISBN and author, otherwise false
      */
     @Override
     public boolean equals(Object obj) {
@@ -73,9 +73,9 @@ public class Book {
     }
 
     /**
-     * Returns a string representation of the book.
+     * Returns a string representation of the book
      * 
-     * @return A formatted string describing the book.
+     * @return A formatted string describing the book
      */
     @Override
     public String toString() {
