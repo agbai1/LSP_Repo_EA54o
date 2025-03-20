@@ -16,7 +16,7 @@ public class VotingMachine {
 
     /**
      * Add a candidate to the election
-     * @param name The name of the candidate to be added.
+     * @param name The name of the candidate to be added
      */
     public void addCandidate(String name) {
         votes.put(name, 0);
