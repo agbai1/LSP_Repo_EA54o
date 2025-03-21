@@ -39,3 +39,4 @@ public class Music implements Streamable {
         System.out.println("Added " + title + " to " + playlistName + " playlist");
     }
 }
+

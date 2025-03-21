@@ -9,3 +9,4 @@ public interface Streamable {
     void pause();
     void stop();
 }
+
