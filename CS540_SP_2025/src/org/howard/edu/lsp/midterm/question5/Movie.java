@@ -6,7 +6,6 @@ package org.howard.edu.lsp.midterm.question5;
  */
 public class Movie implements Streamable {
     private String title;
-
     /**
      * Constructor for Movie
      * 

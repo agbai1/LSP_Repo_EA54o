@@ -3,7 +3,6 @@ package org.howard.edu.lsp.midterm.question5;
 /**
  * Represents an Audiobook that can be streamed
  */
-
 public class Audiobook implements Streamable {
     private String title;
 
