@@ -5,21 +5,24 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * IntegerSet represents a set of integers without duplicates.
- * It supports common set operations such as union, intersection,
- * difference, and complement.
+ * IntegerSet class models a collection of unique integers, 
+ * ensuring no duplicates are present. It includes functionality 
+ * for standard set operations such as union, intersection, 
+ *  difference, and complement
+ *  
+ *  Implementation of the javadoc was provided by ChatGPT (OpenAI) for academic support.
  */
 public class IntegerSet {
     private List<Integer> set = new ArrayList<Integer>();
 
     /**
-     * Default constructor for an empty set.
+     * Default constructor for an empty set
      */
     public IntegerSet() {}
 
     /**
-     * Constructor that initializes the set with a list of integers.
-     * @param set List of integers to initialize the set with.
+     * Constructor that initializes the set with a list of integers
+     * @param set List of integers to initialize the set with
      */
     public IntegerSet(ArrayList<Integer> set) {
         for (int item : set) {
@@ -30,14 +33,14 @@ public class IntegerSet {
     }
 
     /**
-     * Clears the internal list of the set.
+     * Clears the internal list of the set
      */
     public void clear() {
         set.clear();
     }
 
     /**
-     * Returns the number of elements in the set.
+     * Returns the number of elements in the set
      * @return length of the set
      */
     public int length() {
@@ -45,7 +48,7 @@ public class IntegerSet {
     }
 
     /**
-     * Checks if this set is equal to another object.
+     * Checks if this set is equal to another object
      * @param o the object to compare to
      * @return true if sets contain the same elements
      */
@@ -58,7 +61,7 @@ public class IntegerSet {
     }
 
     /**
-     * Checks if the set contains a specific value.
+     * Checks if the set contains a specific value
      * @param value the value to check for
      * @return true if value is in the set
      */
@@ -67,7 +70,7 @@ public class IntegerSet {
     }
 
     /**
-     * Returns the largest value in the set.
+     * Returns the largest value in the set
      * @return largest integer
      * @throws IntegerSetException if the set is empty
      */
@@ -77,7 +80,7 @@ public class IntegerSet {
     }
 
     /**
-     * Returns the smallest value in the set.
+     * Returns the smallest value in the set
      * @return smallest integer
      * @throws IntegerSetException if the set is empty
      */
@@ -87,7 +90,7 @@ public class IntegerSet {
     }
 
     /**
-     * Adds an item to the set if not already present.
+     * Adds an item to the set if not already present
      * @param item the item to add
      */
     public void add(int item) {
@@ -97,7 +100,7 @@ public class IntegerSet {
     }
 
     /**
-     * Removes an item from the set if it exists.
+     * Removes an item from the set if it exists
      * @param item the item to remove
      */
     public void remove(int item) {
@@ -105,7 +108,7 @@ public class IntegerSet {
     }
 
     /**
-     * Performs union with another set (modifies this set).
+     * Performs union with another set
      * @param intSetb the other set
      */
     public void union(IntegerSet intSetb) {
@@ -117,7 +120,7 @@ public class IntegerSet {
     }
 
     /**
-     * Performs intersection with another set (modifies this set).
+     * Performs intersection with another set
      * @param intSetb the other set
      */
     public void intersect(IntegerSet intSetb) {
@@ -125,7 +128,7 @@ public class IntegerSet {
     }
 
     /**
-     * Performs set difference (this - intSetb).
+     * Performs set difference
      * @param intSetb the other set
      */
     public void diff(IntegerSet intSetb) {
@@ -133,7 +136,7 @@ public class IntegerSet {
     }
 
     /**
-     * Performs set complement (modifies this set to become intSetb - this).
+     * Performs set complement
      * @param intSetb the other set
      */
     public void complement(IntegerSet intSetb) {
@@ -147,7 +150,7 @@ public class IntegerSet {
     }
 
     /**
-     * Checks if the set is empty.
+     * Checks if the set is empty
      * @return true if set is empty
      */
     public boolean isEmpty() {
@@ -155,7 +158,7 @@ public class IntegerSet {
     }
 
     /**
-     * Returns a string representation of the set.
+     * Returns a string representation of the set
      * @return string representation
      */
     public String toString() {
@@ -164,7 +167,7 @@ public class IntegerSet {
 }
 
 /**
- * Exception thrown when an operation is performed on an empty IntegerSet.
+ * Exception thrown when an operation is performed on an empty IntegerSet
  */
 class IntegerSetException extends Exception {
     public IntegerSetException(String message) {
